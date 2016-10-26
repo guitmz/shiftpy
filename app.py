@@ -18,4 +18,4 @@ class RedshiftResource(Resource):
 api.add_resource(RedshiftResource, '/send_to_redshift')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
