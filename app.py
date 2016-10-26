@@ -14,6 +14,7 @@ class RedshiftResource(Resource):
         data = request.json
         exporter = RedshiftExporter(**data)
         exporter.send_to_redshift()
+        return 201
 
 api.add_resource(RedshiftResource, '/send_to_redshift')
 

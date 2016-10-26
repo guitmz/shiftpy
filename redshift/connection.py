@@ -23,6 +23,4 @@ def redshift_run_query(query):
                 cur.execute(query)
             conn.commit()
     except psycopg2.Error as e:
-        raise 'Error {error_code} running query: {error_msg}'.format(
-            error_code=e.pgcode, error_msg=e.pgerror
-        )
+        raise e
