@@ -1,4 +1,4 @@
-from const import REDSHIFT_PASSWORD, REDSHIFT_USERNAME, REDSHIFT_URL, REDSHIFT_DATABASE
+from const import REDSHIFT_PASSWORD, REDSHIFT_USERNAME, REDSHIFT_URL, REDSHIFT_DATABASE, REDSHIFT_PORT
 import psycopg2
 
 
@@ -10,7 +10,7 @@ def redshift_conn():
             db_name=REDSHIFT_DATABASE,
             db_user=REDSHIFT_USERNAME,
             db_pass=REDSHIFT_PASSWORD,
-            db_port=5439,
+            db_port=REDSHIFT_PORT,
             db_host=REDSHIFT_URL,
         )
     return psycopg2.connect(conn_str)
