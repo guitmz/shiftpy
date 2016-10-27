@@ -16,11 +16,13 @@ def redshift_conn():
     return psycopg2.connect(conn_str)
 
 
-def redshift_run_query(query):
+def run_query(query):
     try:
         with redshift_conn() as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
+                result = cur.fetchall()
             conn.commit()
     except psycopg2.Error as e:
         raise e
+    return result

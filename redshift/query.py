@@ -28,13 +28,13 @@ SET
 
 FROM {tmp_table}
 WHERE
-    {tmp_table}.db_id = {table_name}.db_id;
+    {fields_where};
 
 INSERT INTO {table_name} (
         {fields_insert}
 )
 SELECT DISTINCT {fields_insert}
 FROM {tmp_table}
-WHERE {tmp_table}.db_id not in (SELECT db_id FROM {table_name});
+WHERE {fields_insert_where};
 END;
 """
