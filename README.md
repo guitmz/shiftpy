@@ -26,5 +26,7 @@ $ flask run
 ```
 # Usage
 ```
-curl -XPOST -H "Content-Type: application/json" http://127.0.0.1:5000/send_to_redshift/ -d '{"s3path":"accounts/accounts_oct_26.csv", "table_name":"accounts", "fields":["id", "name", "address"]}'
+curl -XPOST -H "Content-Type: application/json" \
+     http://127.0.0.1:5000/send_to_redshift/ -d \
+     '{"s3path": "accounts/accounts_oct_26.csv", "table_name":"accounts"}'
 ```
