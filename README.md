@@ -2,6 +2,7 @@
 Python restful API to help sending data to Redshift
 
 # Running it
+You need to edit `const.py` to match your settings.
 I recommend running it as a Docker container:
 
 ```
